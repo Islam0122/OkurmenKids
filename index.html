@@ -1,399 +1,867 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>WebMind Club — Precision Web &amp; Bot Engineering</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "primary-fixed-dim": "#c3c0ff",
-                    "surface": "#131313",
-                    "surface-bright": "#3a3939",
-                    "error": "#ffb4ab",
-                    "on-primary-container": "#dad7ff",
-                    "primary": "#c3c0ff",
-                    "surface-tint": "#c3c0ff",
-                    "surface-dim": "#131313",
-                    "on-primary": "#1d00a5",
-                    "outline-variant": "#464555",
-                    "tertiary-container": "#4b4dd8",
-                    "on-tertiary-fixed": "#07006c",
-                    "outline": "#918fa1",
-                    "on-secondary-fixed": "#001e2f",
-                    "inverse-on-surface": "#313030",
-                    "tertiary": "#c0c1ff",
-                    "secondary-fixed-dim": "#89ceff",
-                    "on-tertiary-container": "#d9d8ff",
-                    "on-secondary-fixed-variant": "#004c6e",
-                    "on-primary-fixed-variant": "#3323cc",
-                    "surface-container": "#201f1f",
-                    "on-error": "#690005",
-                    "secondary": "#89ceff",
-                    "on-secondary-container": "#00344e",
-                    "inverse-surface": "#e5e2e1",
-                    "on-secondary": "#00344d",
-                    "surface-container-highest": "#353534",
-                    "surface-variant": "#353534",
-                    "surface-container-high": "#2a2a2a",
-                    "inverse-primary": "#4d44e3",
-                    "tertiary-fixed-dim": "#c0c1ff",
-                    "on-background": "#e5e2e1",
-                    "on-error-container": "#ffdad6",
-                    "secondary-container": "#00a2e6",
-                    "on-primary-fixed": "#0f0069",
-                    "primary-container": "#4f46e5",
-                    "tertiary-fixed": "#e1e0ff",
-                    "surface-container-lowest": "#0e0e0e",
-                    "error-container": "#93000a",
-                    "on-tertiary": "#1000a9",
-                    "primary-fixed": "#e2dfff",
-                    "on-tertiary-fixed-variant": "#2f2ebe",
-                    "on-surface": "#e5e2e1",
-                    "secondary-fixed": "#c9e6ff",
-                    "on-surface-variant": "#c7c4d8",
-                    "surface-container-low": "#1c1b1b",
-                    "background": "#131313"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "stack-md": "24px",
-                    "stack-xs": "4px",
-                    "margin-desktop": "64px",
-                    "stack-lg": "48px",
-                    "stack-sm": "12px",
-                    "base": "8px",
-                    "container-max": "1200px",
-                    "margin-mobile": "16px",
-                    "gutter": "24px",
-                    "stack-xl": "80px"
-            },
-            "fontFamily": {
-                    "body-lg": ["Inter"],
-                    "h2": ["Space Grotesk"],
-                    "body-md": ["Inter"],
-                    "h3": ["Space Grotesk"],
-                    "h1": ["Space Grotesk"],
-                    "label-caps": ["Inter"]
-            },
-            "fontSize": {
-                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "-0.01em", "fontWeight": "400"}],
-                    "h2": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.03em", "fontWeight": "600"}],
-                    "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
-                    "h3": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "600"}],
-                    "h1": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
-                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}]
-            }
-          },
-        },
-      }
-    </script>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python Collections Adventure 🐍</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fira+Code:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-        body {
-            background-color: #000000;
-            color: #e5e2e1;
-            -webkit-font-smoothing: antialiased;
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-        .glass-card:hover {
-            border-color: rgba(195, 192, 255, 0.4);
-            background: rgba(255, 255, 255, 0.05);
-        }
-        .text-glow {
-            text-shadow: 0 0 20px rgba(195, 192, 255, 0.3);
-        }
-    </style>
+  :root {
+    --bg: #0d0f1a;
+    --bg2: #12152a;
+    --card: #1a1f35;
+    --card2: #1f2540;
+    --list: #00e5ff;
+    --list-dark: #00b8cc;
+    --tuple: #ff6b9d;
+    --tuple-dark: #cc4d7a;
+    --set: #69ff47;
+    --set-dark: #3dcc1a;
+    --gold: #ffd700;
+    --purple: #bf5af2;
+    --orange: #ff9f0a;
+    --text: #e8eaf6;
+    --text2: #9099c0;
+    --glow-list: 0 0 20px rgba(0,229,255,0.5);
+    --glow-tuple: 0 0 20px rgba(255,107,157,0.5);
+    --glow-set: 0 0 20px rgba(105,255,71,0.5);
+    --glow-gold: 0 0 20px rgba(255,215,0,0.5);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { height:100%; overflow:hidden; font-family:'Nunito',sans-serif; background:var(--bg); color:var(--text); }
+
+  /* ── SLIDE ENGINE ── */
+  #app { width:100%; height:100%; position:relative; }
+  .slide { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    padding:20px; opacity:0; pointer-events:none; transition:opacity .5s ease, transform .5s ease; transform:translateX(60px); }
+  .slide.active { opacity:1; pointer-events:all; transform:translateX(0); }
+  .slide.exit { opacity:0; transform:translateX(-60px); }
+
+  /* ── NAVIGATION ── */
+  #nav { position:fixed; bottom:28px; left:50%; transform:translateX(-50%); display:flex; gap:12px; z-index:100; }
+  .dot { width:10px; height:10px; border-radius:50%; background:rgba(255,255,255,.2); cursor:pointer; transition:all .3s; }
+  .dot.active { background:#fff; box-shadow:0 0 8px rgba(255,255,255,.7); transform:scale(1.3); }
+  #prev,#next { position:fixed; top:50%; transform:translateY(-50%); background:rgba(255,255,255,.08);
+    border:none; color:#fff; font-size:22px; width:46px; height:46px; border-radius:50%; cursor:pointer;
+    backdrop-filter:blur(8px); z-index:100; transition:all .2s; display:flex; align-items:center; justify-content:center; }
+  #prev { left:16px; } #next { right:16px; }
+  #prev:hover,#next:hover { background:rgba(255,255,255,.18); transform:translateY(-50%) scale(1.1); }
+  #slide-counter { position:fixed; top:18px; right:22px; font-size:13px; color:var(--text2); font-weight:700;
+    background:rgba(255,255,255,.07); padding:5px 12px; border-radius:20px; z-index:100; }
+
+  /* ── XP BAR ── */
+  #xp-bar { position:fixed; top:18px; left:22px; z-index:100; display:flex; align-items:center; gap:10px; }
+  #xp-label { font-size:13px; font-weight:800; color:var(--gold); text-shadow:var(--glow-gold); }
+  #xp-track { width:120px; height:10px; background:rgba(255,255,255,.1); border-radius:10px; overflow:hidden; }
+  #xp-fill { height:100%; background:linear-gradient(90deg,var(--gold),var(--orange)); border-radius:10px;
+    transition:width .6s cubic-bezier(.34,1.56,.64,1); width:0%; }
+
+  /* ── COMMON ELEMENTS ── */
+  .tag { display:inline-block; font-size:11px; font-weight:800; padding:3px 10px; border-radius:20px;
+    text-transform:uppercase; letter-spacing:.08em; }
+  .badge { display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:700;
+    padding:6px 14px; border-radius:20px; }
+  .card { background:var(--card); border-radius:20px; padding:22px; border:1px solid rgba(255,255,255,.07); }
+  .card2 { background:var(--card2); border-radius:14px; padding:16px; border:1px solid rgba(255,255,255,.05); }
+
+  /* code block */
+  .code-block { background:#0a0c18; border-radius:14px; padding:18px 22px; font-family:'Fira Code',monospace;
+    font-size:15px; line-height:1.7; border:1px solid rgba(255,255,255,.1); position:relative; }
+  .code-block .kw { color:#ff79c6; }
+  .code-block .str { color:var(--set); }
+  .code-block .num { color:var(--list); }
+  .code-block .var { color:#f8f8f2; }
+  .code-block .fn { color:var(--gold); }
+  .code-block .cm { color:#6272a4; }
+  .code-line { display:flex; gap:12px; }
+  .ln { color:#444; user-select:none; min-width:18px; }
+
+  /* ── SLIDE 1: TITLE ── */
+  .title-bg { position:absolute; inset:0; overflow:hidden; }
+  .star { position:absolute; border-radius:50%; background:white; animation:twinkle 2s infinite alternate; }
+  @keyframes twinkle { from{opacity:.2} to{opacity:1} }
+  .hero-row { display:flex; gap:24px; justify-content:center; flex-wrap:wrap; margin:24px 0; }
+  .hero-card { background:var(--card); border-radius:20px; padding:18px 22px; display:flex; flex-direction:column;
+    align-items:center; gap:8px; cursor:pointer; transition:transform .3s; min-width:120px; border:2px solid transparent; }
+  .hero-card:hover { transform:translateY(-8px) scale(1.04); }
+  .hero-card.list { border-color:var(--list); box-shadow:var(--glow-list); }
+  .hero-card.tuple { border-color:var(--tuple); box-shadow:var(--glow-tuple); }
+  .hero-card.set { border-color:var(--set); box-shadow:var(--glow-set); }
+  .hero-emoji { font-size:40px; }
+  .hero-name { font-size:14px; font-weight:800; }
+  .hero-desc { font-size:11px; color:var(--text2); text-align:center; }
+  .title-main { font-size:clamp(28px,6vw,52px); font-weight:900; text-align:center; line-height:1.1; }
+  .neon-list { color:var(--list); text-shadow:var(--glow-list); }
+  .neon-tuple { color:var(--tuple); text-shadow:var(--glow-tuple); }
+  .neon-set { color:var(--set); text-shadow:var(--glow-set); }
+  .neon-gold { color:var(--gold); text-shadow:var(--glow-gold); }
+  .subtitle { font-size:16px; color:var(--text2); margin-top:8px; }
+
+  /* ── SLIDE 2: COLLECTIONS ── */
+  .backpack-row { display:flex; gap:16px; flex-wrap:wrap; justify-content:center; margin:16px 0; }
+  .item-chip { background:var(--card); border-radius:12px; padding:10px 16px; font-size:14px; font-weight:700;
+    border:1px solid rgba(255,255,255,.1); display:flex; align-items:center; gap:8px; }
+  .info-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; width:100%; max-width:700px; margin-top:10px; }
+  .info-card { border-radius:16px; padding:16px; text-align:center; display:flex; flex-direction:column; gap:6px; }
+  .info-card.l { background:rgba(0,229,255,.1); border:1px solid rgba(0,229,255,.3); }
+  .info-card.t { background:rgba(255,107,157,.1); border:1px solid rgba(255,107,157,.3); }
+  .info-card.s { background:rgba(105,255,71,.1); border:1px solid rgba(105,255,71,.3); }
+  .info-card .ic-emoji { font-size:28px; }
+  .info-card .ic-title { font-size:13px; font-weight:800; }
+  .info-card .ic-sub { font-size:11px; color:var(--text2); }
+
+  /* ── LIST SLIDE ── */
+  .list-demo { display:flex; gap:8px; align-items:stretch; justify-content:center; flex-wrap:wrap; margin:14px 0; }
+  .list-item { background:rgba(0,229,255,.12); border:2px solid var(--list); border-radius:12px;
+    padding:10px 16px; font-size:15px; font-weight:700; color:var(--list); min-width:80px; text-align:center;
+    position:relative; transition:all .4s; }
+  .list-item .idx { position:absolute; top:-9px; left:50%; transform:translateX(-50%);
+    background:var(--list); color:#000; font-size:10px; font-weight:800; padding:1px 6px; border-radius:6px; }
+  .list-item.new { animation:popIn .5s cubic-bezier(.34,1.56,.64,1); }
+  .list-item.remove { animation:popOut .4s ease forwards; }
+  @keyframes popIn { from{transform:scale(0) rotate(-10deg);opacity:0} to{transform:scale(1) rotate(0);opacity:1} }
+  @keyframes popOut { to{transform:scale(0);opacity:0} }
+  .method-chips { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-top:10px; }
+  .m-chip { padding:7px 14px; border-radius:10px; font-family:'Fira Code',monospace; font-size:13px; font-weight:600;
+    cursor:pointer; transition:all .2s; }
+  .m-chip.append { background:rgba(0,229,255,.15); border:1px solid var(--list); color:var(--list); }
+  .m-chip.remove { background:rgba(255,107,157,.15); border:1px solid var(--tuple); color:var(--tuple); }
+  .m-chip.index { background:rgba(105,255,71,.15); border:1px solid var(--set); color:var(--set); }
+  .m-chip:hover { transform:scale(1.08); }
+  .demo-hint { font-size:12px; color:var(--text2); margin-top:6px; }
+
+  /* ── TUPLE SLIDE ── */
+  .lock-demo { display:flex; gap:8px; align-items:center; justify-content:center; margin:14px 0; }
+  .tuple-item { background:rgba(255,107,157,.12); border:2px solid var(--tuple); border-radius:12px;
+    padding:10px 18px; font-size:16px; font-weight:700; color:var(--tuple); }
+  .lock-icon { font-size:32px; animation:lockBounce 2s infinite; }
+  @keyframes lockBounce { 0%,100%{transform:scale(1)} 50%{transform:scale(1.2) rotate(5deg)} }
+  .why-tuple { display:grid; grid-template-columns:1fr 1fr; gap:12px; max-width:640px; margin:12px auto; }
+  .wt-card { background:rgba(255,107,157,.08); border:1px solid rgba(255,107,157,.3); border-radius:14px;
+    padding:14px; display:flex; flex-direction:column; gap:6px; }
+  .wt-card .wt-emoji { font-size:24px; }
+  .wt-card .wt-title { font-size:13px; font-weight:800; color:var(--tuple); }
+  .wt-card .wt-text { font-size:12px; color:var(--text2); }
+
+  /* ── SET SLIDE ── */
+  .cards-area { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin:12px 0; }
+  .game-card { width:54px; height:72px; border-radius:10px; display:flex; align-items:center; justify-content:center;
+    font-size:22px; font-weight:800; border:2px solid; transition:all .4s; cursor:default; }
+  .game-card.dup { opacity:.4; transform:scale(.9); border-color:rgba(105,255,71,.3); background:rgba(105,255,71,.05); color:var(--set); }
+  .game-card.unique { border-color:var(--set); background:rgba(105,255,71,.15); color:var(--set);
+    box-shadow:var(--glow-set); }
+  .set-ops { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:10px; }
+  .set-op-card { background:rgba(105,255,71,.08); border:1px solid rgba(105,255,71,.25); border-radius:12px;
+    padding:10px 16px; text-align:center; font-size:12px; }
+  .set-op-card .op-name { font-size:13px; font-weight:800; color:var(--set); }
+
+  /* ── COMPARE TABLE ── */
+  .compare-table { width:100%; max-width:680px; border-collapse:collapse; }
+  .compare-table th { padding:12px 16px; font-size:13px; font-weight:800; text-align:center; }
+  .compare-table td { padding:11px 16px; font-size:13px; text-align:center; border-top:1px solid rgba(255,255,255,.06); }
+  .compare-table .th-list { color:var(--list); }
+  .compare-table .th-tuple { color:var(--tuple); }
+  .compare-table .th-set { color:var(--set); }
+  .compare-table .row-label { text-align:left; color:var(--text2); font-weight:700; }
+  .yes { color:var(--set); font-weight:800; }
+  .no { color:var(--tuple); font-weight:800; }
+  .partial { color:var(--gold); font-weight:800; }
+
+  /* ── QUIZ ── */
+  .quiz-q { font-size:18px; font-weight:800; text-align:center; margin-bottom:18px; line-height:1.4; }
+  .quiz-opts { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
+  .quiz-opt { background:var(--card); border:2px solid rgba(255,255,255,.1); border-radius:14px;
+    padding:14px 20px; font-size:14px; font-weight:700; cursor:pointer; transition:all .25s;
+    min-width:160px; text-align:center; }
+  .quiz-opt:hover:not(.answered) { transform:translateY(-3px); background:var(--card2); border-color:rgba(255,255,255,.3); }
+  .quiz-opt.correct { border-color:var(--set); background:rgba(105,255,71,.15); color:var(--set); animation:bounceIn .4s; }
+  .quiz-opt.wrong { border-color:var(--tuple); background:rgba(255,107,157,.12); color:var(--tuple); }
+  @keyframes bounceIn { 0%{transform:scale(.8)} 60%{transform:scale(1.1)} 100%{transform:scale(1)} }
+  .quiz-progress { display:flex; gap:6px; justify-content:center; margin-bottom:16px; }
+  .qp-dot { width:28px; height:6px; border-radius:3px; background:rgba(255,255,255,.15); transition:background .3s; }
+  .qp-dot.done { background:var(--set); }
+  .qp-dot.current { background:var(--gold); animation:pulse .8s infinite alternate; }
+  @keyframes pulse { from{opacity:.6} to{opacity:1} }
+  .quiz-result { text-align:center; display:none; }
+  .quiz-result.show { display:block; animation:popIn .5s; }
+  .quiz-score { font-size:48px; font-weight:900; }
+  #quiz-feedback { font-size:14px; color:var(--text2); margin-top:6px; text-align:center; min-height:22px; }
+  #next-q-btn { margin-top:14px; background:linear-gradient(135deg,var(--purple),#7b2ff7);
+    border:none; color:#fff; font-size:14px; font-weight:800; padding:10px 24px;
+    border-radius:12px; cursor:pointer; font-family:'Nunito',sans-serif; transition:all .2s; display:none; }
+  #next-q-btn:hover { transform:scale(1.05); }
+
+  /* ── PRACTICE ── */
+  .task-card { background:var(--card); border-radius:18px; padding:18px 20px; margin:8px 0;
+    border-left:4px solid; display:flex; gap:14px; align-items:flex-start; }
+  .task-card.t1 { border-color:var(--list); }
+  .task-card.t2 { border-color:var(--tuple); }
+  .task-card.t3 { border-color:var(--set); }
+  .task-card .t-num { font-size:22px; font-weight:900; min-width:36px; }
+  .task-card .t-body .t-title { font-size:14px; font-weight:800; margin-bottom:4px; }
+  .task-card .t-body .t-desc { font-size:13px; color:var(--text2); line-height:1.5; }
+  .task-card .t-body .t-hint { font-size:12px; color:var(--gold); margin-top:6px; }
+
+  /* ── FINAL ── */
+  .medal { font-size:80px; animation:medalSpin 3s ease-in-out infinite; display:block; }
+  @keyframes medalSpin { 0%{transform:rotateY(0)} 50%{transform:rotateY(180deg)} 100%{transform:rotateY(360deg)} }
+  .level-badge { background:linear-gradient(135deg,#ffd700,#ff9f0a); color:#000; font-size:13px; font-weight:900;
+    padding:8px 20px; border-radius:30px; display:inline-block; margin:8px 0; letter-spacing:.08em; }
+  .skill-row { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin:12px 0; }
+  .skill-chip { background:var(--card); border-radius:12px; padding:8px 16px; font-size:13px; font-weight:700;
+    border:1px solid rgba(255,255,255,.1); }
+  .confetti-wrapper { position:absolute; inset:0; pointer-events:none; overflow:hidden; }
+  .conf { position:absolute; width:10px; height:10px; border-radius:2px; animation:fall linear infinite; }
+  @keyframes fall { to{transform:translateY(110vh) rotate(720deg);} }
+
+  /* ── HEADINGS ── */
+  .slide-title { font-size:clamp(18px,4vw,30px); font-weight:900; text-align:center; margin-bottom:6px; }
+  .slide-sub { font-size:14px; color:var(--text2); text-align:center; margin-bottom:16px; }
+  .section-tag { font-size:11px; font-weight:800; padding:3px 12px; border-radius:20px; letter-spacing:.1em;
+    text-transform:uppercase; display:inline-block; margin-bottom:8px; }
+
+  /* misc */
+  .row { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+  .arrow { font-size:20px; color:var(--text2); }
+  .spacer { flex:1; }
+
+  @media(max-width:600px) {
+    .info-grid { grid-template-columns:1fr; }
+    .why-tuple { grid-template-columns:1fr; }
+    #prev,#next { width:36px; height:36px; font-size:16px; }
+  }
+</style>
 </head>
-<body class="font-body-md">
-<!-- TopNavBar -->
-<header class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-white/10 shadow-2xl">
-<div class="flex justify-between items-center h-16 px-6 md:px-12 max-w-7xl mx-auto">
-<div class="text-xl font-bold tracking-tighter text-white font-['Space_Grotesk']">WebMind Club</div>
-<nav class="hidden md:flex gap-8">
-<a class="text-gray-400 hover:text-white transition-colors font-['Space_Grotesk'] tracking-tight" href="#services">Services</a>
-<a class="text-gray-400 hover:text-white transition-colors font-['Space_Grotesk'] tracking-tight" href="#portfolio">Portfolio</a>
-<a class="text-gray-400 hover:text-white transition-colors font-['Space_Grotesk'] tracking-tight" href="#process">Process</a>
-<a class="text-gray-400 hover:text-white transition-colors font-['Space_Grotesk'] tracking-tight" href="#about">About</a>
-</nav>
-<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-['Space_Grotesk'] font-semibold active:scale-95 transition-all hover:bg-white/5 border border-white/10">
-                Get a Consultation
-            </button>
+<body>
+<div id="app">
+
+  <!-- XP Bar -->
+  <div id="xp-bar">
+    <span id="xp-label">⚡ XP: <span id="xp-num">0</span></span>
+    <div id="xp-track"><div id="xp-fill"></div></div>
+  </div>
+  <div id="slide-counter"></div>
+  <button id="prev">‹</button>
+  <button id="next">›</button>
+
+  <!-- =================== SLIDE 1: TITLE =================== -->
+  <div class="slide active" id="s0">
+    <div class="title-bg" id="stars-bg"></div>
+    <div class="section-tag" style="background:rgba(255,215,0,.15);color:var(--gold);border:1px solid rgba(255,215,0,.3)">🎮 Python Adventure</div>
+    <div class="title-main">
+      <span class="neon-list">Python</span><br>
+      <span class="neon-gold">Collections</span><br>
+      <span style="color:#fff">Adventure</span> 🐍
+    </div>
+    <p class="subtitle">Изучаем List, Tuple и Set — как настоящие герои!</p>
+    <div class="hero-row">
+      <div class="hero-card list">
+        <div class="hero-emoji">📋</div>
+        <div class="hero-name" style="color:var(--list)">List</div>
+        <div class="hero-desc">Изменяемый<br>список</div>
+      </div>
+      <div class="hero-card tuple">
+        <div class="hero-emoji">🔒</div>
+        <div class="hero-name" style="color:var(--tuple)">Tuple</div>
+        <div class="hero-desc">Неизменяемая<br>коллекция</div>
+      </div>
+      <div class="hero-card set">
+        <div class="hero-emoji">✨</div>
+        <div class="hero-name" style="color:var(--set)">Set</div>
+        <div class="hero-desc">Только<br>уникальные</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:4px">
+      <span class="badge" style="background:rgba(191,90,242,.15);border:1px solid var(--purple);color:var(--purple)">⚡ +XP за каждый слайд</span>
+      <span class="badge" style="background:rgba(255,215,0,.1);border:1px solid var(--gold);color:var(--gold)">🏆 Квиз в конце</span>
+    </div>
+    <p style="font-size:12px;color:var(--text2);margin-top:12px">Нажимай › чтобы начать приключение!</p>
+  </div>
+
+  <!-- =================== SLIDE 2: COLLECTIONS =================== -->
+  <div class="slide" id="s1">
+    <div class="section-tag" style="background:rgba(191,90,242,.15);color:var(--purple);border:1px solid rgba(191,90,242,.3)">📦 Урок 1</div>
+    <div class="slide-title">Что такое <span class="neon-gold">коллекция</span>?</div>
+    <div class="slide-sub">Когда нужно хранить много вещей вместе 🎒</div>
+
+    <div class="card" style="max-width:600px;width:100%;text-align:center">
+      <p style="font-size:24px;margin-bottom:10px">🎒 Представь свой рюкзак!</p>
+      <p style="font-size:14px;color:var(--text2);margin-bottom:14px">В рюкзаке у тебя лежат разные вещи — это как коллекция в Python!</p>
+      <div class="backpack-row">
+        <div class="item-chip">📚 учебник</div>
+        <div class="item-chip">✏️ карандаш</div>
+        <div class="item-chip">💧 бутылка</div>
+        <div class="item-chip">🎮 геймпад</div>
+        <div class="item-chip">🎧 наушники</div>
+      </div>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card l">
+        <span class="ic-emoji">📋</span>
+        <span class="ic-title neon-list">List</span>
+        <span class="ic-sub">Как рюкзак — можно добавлять и убирать вещи</span>
+      </div>
+      <div class="info-card t">
+        <span class="ic-emoji">🔒</span>
+        <span class="ic-title neon-tuple">Tuple</span>
+        <span class="ic-sub">Как запаянная коробка — нельзя изменить</span>
+      </div>
+      <div class="info-card s">
+        <span class="ic-emoji">✨</span>
+        <span class="ic-title neon-set">Set</span>
+        <span class="ic-sub">Как ящик с карточками — только уникальные</span>
+      </div>
+    </div>
+
+    <div class="card2" style="max-width:500px;width:100%;margin-top:8px;text-align:center">
+      <span style="font-size:13px">💡 В Python коллекция — это <strong style="color:var(--gold)">переменная, которая хранит несколько значений сразу</strong></span>
+    </div>
+  </div>
+
+  <!-- =================== SLIDE 3: LIST =================== -->
+  <div class="slide" id="s2">
+    <div class="section-tag" style="background:rgba(0,229,255,.12);color:var(--list);border:1px solid rgba(0,229,255,.3)">📋 Список</div>
+    <div class="slide-title"><span class="neon-list">List</span> — изменяемый список</div>
+    <div class="slide-sub">Как плейлист в Spotify — можно добавлять и удалять 🎵</div>
+
+    <div class="list-demo" id="list-demo">
+      <!-- filled by JS -->
+    </div>
+    <div class="demo-hint" id="list-hint">⬇️ Нажми на кнопки чтобы увидеть методы в действии!</div>
+
+    <div class="method-chips">
+      <div class="m-chip append" onclick="listAppend()">📥 .append("grape")</div>
+      <div class="m-chip remove" onclick="listRemove()">🗑️ .remove("banana")</div>
+      <div class="m-chip index" onclick="listIndex()">🔍 [0] → "apple"</div>
+    </div>
+
+    <div class="code-block" style="max-width:520px;width:100%;margin-top:14px">
+      <div class="code-line"><span class="ln">1</span><span><span class="var">fruits</span> <span style="color:#ff79c6">=</span> [<span class="str">"apple"</span>, <span class="str">"banana"</span>, <span class="str">"orange"</span>]</span></div>
+      <div class="code-line"><span class="ln">2</span><span><span class="var">fruits</span>.<span class="fn">append</span>(<span class="str">"grape"</span>)     <span class="cm"># добавить</span></span></div>
+      <div class="code-line"><span class="ln">3</span><span><span class="var">fruits</span>.<span class="fn">remove</span>(<span class="str">"banana"</span>)   <span class="cm"># удалить</span></span></div>
+      <div class="code-line"><span class="ln">4</span><span><span class="kw">print</span>(<span class="var">fruits</span>[<span class="num">0</span>])           <span class="cm"># → "apple"</span></span></div>
+    </div>
+  </div>
+
+  <!-- =================== SLIDE 4: TUPLE =================== -->
+  <div class="slide" id="s3">
+    <div class="section-tag" style="background:rgba(255,107,157,.12);color:var(--tuple);border:1px solid rgba(255,107,157,.3)">🔒 Урок 3</div>
+    <div class="slide-title"><span class="neon-tuple">Tuple</span> — неизменяемая коллекция</div>
+    <div class="slide-sub">Как координаты на карте — их не меняют 🗺️</div>
+
+    <div class="lock-demo">
+      <div class="tuple-item">(</div>
+      <div class="tuple-item" style="background:rgba(255,107,157,.2)">10</div>
+      <div class="tuple-item">,</div>
+      <div class="tuple-item" style="background:rgba(255,107,157,.2)">20</div>
+      <div class="tuple-item">)</div>
+      <div class="lock-icon">🔐</div>
+    </div>
+
+    <div class="why-tuple">
+      <div class="wt-card">
+        <span class="wt-emoji">🎮</span>
+        <span class="wt-title">Позиция игрока</span>
+        <span class="wt-text">position = (10, 20)<br>Координаты не должны случайно меняться!</span>
+      </div>
+      <div class="wt-card">
+        <span class="wt-emoji">📅</span>
+        <span class="wt-title">Дата рождения</span>
+        <span class="wt-text">birthday = (2010, 5, 14)<br>День рождения всегда один и тот же!</span>
+      </div>
+      <div class="wt-card">
+        <span class="wt-emoji">🌍</span>
+        <span class="wt-title">Цвета RGB</span>
+        <span class="wt-text">red = (255, 0, 0)<br>Красный всегда останется красным!</span>
+      </div>
+      <div class="wt-card">
+        <span class="wt-emoji">⚡</span>
+        <span class="wt-title">Быстрее List</span>
+        <span class="wt-text">Tuple работает быстрее, потому что Python знает — он не изменится!</span>
+      </div>
+    </div>
+
+    <div class="code-block" style="max-width:520px;width:100%;margin-top:10px">
+      <div class="code-line"><span class="ln">1</span><span><span class="var">position</span> = (<span class="num">10</span>, <span class="num">20</span>)           <span class="cm"># tuple</span></span></div>
+      <div class="code-line"><span class="ln">2</span><span><span class="kw">print</span>(<span class="var">position</span>[<span class="num">0</span>])           <span class="cm"># → 10</span></span></div>
+      <div class="code-line"><span class="ln">3</span><span><span class="var">position</span>[<span class="num">0</span>] = <span class="num">999</span>            <span class="cm"># ❌ ОШИБКА!</span></span></div>
+      <div class="code-line"><span class="ln">4</span><span><span class="cm"># TypeError: 'tuple' object does not support</span></span></div>
+    </div>
+  </div>
+
+  <!-- =================== SLIDE 5: SET =================== -->
+  <div class="slide" id="s4">
+    <div class="section-tag" style="background:rgba(105,255,71,.1);color:var(--set);border:1px solid rgba(105,255,71,.3)">✨ Урок 4</div>
+    <div class="slide-title"><span class="neon-set">Set</span> — только уникальные!</div>
+    <div class="slide-sub">Как коллекция карточек — дубликаты не принимаются! 🃏</div>
+
+    <div id="set-before" style="display:flex;flex-direction:column;align-items:center;gap:6px;width:100%">
+      <p style="font-size:12px;color:var(--text2)">Входные данные (есть дубликаты):</p>
+      <div class="cards-area" id="cards-raw"></div>
+      <div style="font-size:22px;color:var(--text2);margin:4px 0">⬇️ <span style="font-size:13px">Set удаляет дубликаты</span></div>
+      <p style="font-size:12px;color:var(--text2)">После Set (только уникальные):</p>
+      <div class="cards-area" id="cards-unique"></div>
+    </div>
+
+    <div class="set-ops">
+      <div class="set-op-card">
+        <div class="op-name">|  Объединение</div>
+        <div style="font-size:11px;color:var(--text2);margin-top:3px">{1,2} | {2,3} = {1,2,3}</div>
+      </div>
+      <div class="set-op-card">
+        <div class="op-name">&  Пересечение</div>
+        <div style="font-size:11px;color:var(--text2);margin-top:3px">{1,2} & {2,3} = {2}</div>
+      </div>
+      <div class="set-op-card">
+        <div class="op-name">-  Разность</div>
+        <div style="font-size:11px;color:var(--text2);margin-top:3px">{1,2} - {2,3} = {1}</div>
+      </div>
+    </div>
+
+    <div class="code-block" style="max-width:520px;width:100%;margin-top:8px">
+      <div class="code-line"><span class="ln">1</span><span><span class="var">numbers</span> = {<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">3</span>, <span class="num">2</span>}    <span class="cm"># дубликаты</span></span></div>
+      <div class="code-line"><span class="ln">2</span><span><span class="kw">print</span>(<span class="var">numbers</span>)               <span class="cm"># → {1, 2, 3}</span></span></div>
+      <div class="code-line"><span class="ln">3</span><span><span class="var">numbers</span>.<span class="fn">add</span>(<span class="num">4</span>)               <span class="cm"># добавить</span></span></div>
+      <div class="code-line"><span class="ln">4</span><span><span class="var">numbers</span>.<span class="fn">discard</span>(<span class="num">1</span>)           <span class="cm"># удалить</span></span></div>
+    </div>
+  </div>
+
+  <!-- =================== SLIDE 6: COMPARE =================== -->
+  <div class="slide" id="s5">
+    <div class="section-tag" style="background:rgba(255,215,0,.12);color:var(--gold);border:1px solid rgba(255,215,0,.3)">⚡ Урок 5</div>
+    <div class="slide-title">Сравниваем всех трёх героев!</div>
+    <div class="slide-sub">Кто за что отвечает? 🤔</div>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th style="text-align:left;color:var(--text2)">Свойство</th>
+          <th class="th-list">📋 List</th>
+          <th class="th-tuple">🔒 Tuple</th>
+          <th class="th-set">✨ Set</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="row-label">Синтаксис</td>
+          <td><code style="font-family:'Fira Code',mono;color:var(--list)">[ ]</code></td>
+          <td><code style="font-family:'Fira Code',mono;color:var(--tuple)">( )</code></td>
+          <td><code style="font-family:'Fira Code',mono;color:var(--set)">{ }</code></td>
+        </tr>
+        <tr>
+          <td class="row-label">Изменяемый?</td>
+          <td><span class="yes">✅ Да</span></td>
+          <td><span class="no">❌ Нет</span></td>
+          <td><span class="yes">✅ Да</span></td>
+        </tr>
+        <tr>
+          <td class="row-label">Порядок</td>
+          <td><span class="yes">✅ Есть</span></td>
+          <td><span class="yes">✅ Есть</span></td>
+          <td><span class="no">❌ Нет</span></td>
+        </tr>
+        <tr>
+          <td class="row-label">Дубликаты</td>
+          <td><span class="yes">✅ Да</span></td>
+          <td><span class="yes">✅ Да</span></td>
+          <td><span class="no">❌ Нет</span></td>
+        </tr>
+        <tr>
+          <td class="row-label">Индексация</td>
+          <td><span class="yes">✅ Да</span></td>
+          <td><span class="yes">✅ Да</span></td>
+          <td><span class="no">❌ Нет</span></td>
+        </tr>
+        <tr>
+          <td class="row-label">Когда использовать</td>
+          <td style="color:var(--list);font-size:12px">Когда нужно менять список</td>
+          <td style="color:var(--tuple);font-size:12px">Константные данные</td>
+          <td style="color:var(--set);font-size:12px">Убрать дубликаты</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:14px">
+      <div class="card2" style="padding:10px 16px;text-align:center">
+        <span style="font-size:22px">📋</span>
+        <p style="font-size:11px;color:var(--list);font-weight:700;margin-top:4px">Список задач</p>
+      </div>
+      <div class="card2" style="padding:10px 16px;text-align:center">
+        <span style="font-size:22px">🔒</span>
+        <p style="font-size:11px;color:var(--tuple);font-weight:700;margin-top:4px">Дата рождения</p>
+      </div>
+      <div class="card2" style="padding:10px 16px;text-align:center">
+        <span style="font-size:22px">✨</span>
+        <p style="font-size:11px;color:var(--set);font-weight:700;margin-top:4px">Уникальные ники</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================== SLIDE 7: QUIZ =================== -->
+  <div class="slide" id="s6">
+    <div class="section-tag" style="background:rgba(255,215,0,.12);color:var(--gold);border:1px solid rgba(255,215,0,.3)">🎮 Мини-Игра</div>
+    <div class="slide-title">Угадай тип данных!</div>
+    <div class="slide-sub">5 вопросов · зарабатывай XP 🏆</div>
+
+    <div class="quiz-progress" id="quiz-progress">
+      <div class="qp-dot current"></div>
+      <div class="qp-dot"></div>
+      <div class="qp-dot"></div>
+      <div class="qp-dot"></div>
+      <div class="qp-dot"></div>
+    </div>
+
+    <div id="quiz-area" style="max-width:600px;width:100%">
+      <div class="quiz-q" id="quiz-question"></div>
+      <div class="quiz-opts" id="quiz-opts"></div>
+      <div id="quiz-feedback"></div>
+      <button id="next-q-btn" onclick="nextQ()">Следующий вопрос ›</button>
+    </div>
+
+    <div class="quiz-result" id="quiz-result">
+      <div class="quiz-score" id="quiz-score-text"></div>
+      <p style="font-size:16px;color:var(--text2);margin-top:4px" id="quiz-result-msg"></p>
+    </div>
+  </div>
+
+  <!-- =================== SLIDE 8: PRACTICE =================== -->
+  <div class="slide" id="s7">
+    <div class="section-tag" style="background:rgba(191,90,242,.12);color:var(--purple);border:1px solid rgba(191,90,242,.3)">💪 Практика</div>
+    <div class="slide-title">Время кодить!</div>
+    <div class="slide-sub">Попробуй сам — три мини-задания 🚀</div>
+
+    <div style="max-width:640px;width:100%">
+      <div class="task-card t1">
+        <div class="t-num" style="color:var(--list)">1</div>
+        <div class="t-body">
+          <div class="t-title">📋 Список любимых игр</div>
+          <div class="t-desc">Создай список <code style="font-family:'Fira Code',mono;color:var(--list)">games</code> с 3 играми. Добавь 4-ю игру с <code style="font-family:'Fira Code',mono;color:var(--list)">.append()</code>. Выведи первую игру из списка.</div>
+          <div class="t-hint">💡 Подсказка: games[0] — это первый элемент!</div>
+        </div>
+      </div>
+
+      <div class="task-card t2">
+        <div class="t-num" style="color:var(--tuple)">2</div>
+        <div class="t-body">
+          <div class="t-title">🔒 Персонаж игры</div>
+          <div class="t-desc">Создай tuple <code style="font-family:'Fira Code',mono;color:var(--tuple)">hero</code> = (имя, здоровье, уровень). Попробуй изменить здоровье — что произойдёт? 😈</div>
+          <div class="t-hint">💡 Ты увидишь TypeError — это нормально!</div>
+        </div>
+      </div>
+
+      <div class="task-card t3">
+        <div class="t-num" style="color:var(--set)">3</div>
+        <div class="t-body">
+          <div class="t-title">✨ Уникальные посетители</div>
+          <div class="t-desc">У тебя есть список посетителей с дубликатами: <code style="font-family:'Fira Code',mono;color:var(--set)">["Alice","Bob","Alice","Charlie","Bob"]</code>. Используй Set чтобы узнать количество уникальных людей!</div>
+          <div class="t-hint">💡 len(set(visitors)) — считает уникальных!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================== SLIDE 9: FINAL =================== -->
+  <div class="slide" id="s8">
+    <div class="confetti-wrapper" id="confetti"></div>
+    <span class="medal">🏆</span>
+    <div class="level-badge">⚡ LEVEL UP! Python Collector ⚡</div>
+    <div class="title-main" style="margin:8px 0">
+      <span class="neon-gold">Ты — Master</span><br>
+      <span style="color:#fff">Коллекций!</span> 🐍
+    </div>
+    <p style="font-size:14px;color:var(--text2);margin:6px 0 14px">Ты прошёл всё приключение и изучил:</p>
+    <div class="skill-row">
+      <div class="skill-chip">📋 <span style="color:var(--list)">List</span> — изменяемые списки</div>
+      <div class="skill-chip">🔒 <span style="color:var(--tuple)">Tuple</span> — постоянные данные</div>
+      <div class="skill-chip">✨ <span style="color:var(--set)">Set</span> — уникальные элементы</div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:12px 0">
+      <span class="badge" style="background:rgba(105,255,71,.12);border:1px solid var(--set);color:var(--set)">✅ Коллекции изучены</span>
+      <span class="badge" style="background:rgba(255,215,0,.1);border:1px solid var(--gold);color:var(--gold)">🏆 Квиз пройден</span>
+      <span class="badge" style="background:rgba(191,90,242,.12);border:1px solid var(--purple);color:var(--purple)">💡 Практика выполнена</span>
+    </div>
+    <div class="card2" style="max-width:480px;width:100%;text-align:center;margin-top:6px">
+      <p style="font-size:14px;line-height:1.6">Следующий шаг: <strong style="color:var(--gold)">Dictionary (dict)</strong> 📚<br>
+      <span style="font-size:12px;color:var(--text2)">Хранит пары ключ-значение — как телефонная книга!</span></p>
+    </div>
+    <p style="font-size:18px;margin-top:10px">🐍✨🎮🏆⚡🌟</p>
+  </div>
+
 </div>
-</header>
-<main class="pt-16">
-<!-- Hero Section -->
-<section class="relative min-h-[921px] flex flex-col items-center justify-center px-6 text-center overflow-hidden">
-<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,_#4f46e533_0%,_transparent_50%)]"></div>
-<div class="z-10 max-w-4xl">
-<span class="font-label-caps text-primary mb-stack-sm block tracking-[0.2em]">PRECISION ENGINEERING</span>
-<h1 class="font-h1 text-h1 text-white mb-stack-md leading-tight">WebMind — from idea to working product</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-stack-lg">
-                    We build websites, web applications, and Telegram bots that help your business grow with elite technical execution.
-                </p>
-<div class="flex flex-col sm:flex-row gap-4 justify-center">
-<button class="px-8 py-4 bg-primary-container text-white rounded-lg font-h3 text-lg hover:brightness-110 transition-all shadow-lg shadow-indigo-500/20">
-                        Get a free consultation
-                    </button>
-<button class="px-8 py-4 bg-transparent border border-white/10 text-white rounded-lg font-h3 text-lg hover:bg-white/5 transition-all">
-                        View our work
-                    </button>
-</div>
-</div>
-<!-- Decorative Element -->
-<div class="mt-stack-xl w-full max-w-5xl aspect-video glass-card rounded-2xl overflow-hidden border border-white/10 relative">
-<img class="w-full h-full object-cover opacity-60" data-alt="A high-tech cinematic shot of a modern coding environment at night. The screen displays complex lines of code in vibrant indigo and cyan hues against a deep obsidian background. Subtle reflections of data patterns shimmer on a clean metallic desk surface. The atmosphere is focused and professional, representing precision engineering and elite web development craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZA5qxHPUPV0qbh3cCoAZuWbXXLGKToi9kBMa3E0rFHc7Aii9GpRYSmV9J4aVYLE-bH23uFhdAsg6NV8C3UvGNXiDgxL9iWTX2YJY4cP-DmMgBjmfBVUjZJLcHX6u7lFoswjFe2ci3R0j0ZnQB2-nXldWpzY9zkW7jnSpU1sk6wO8MupfDGHRTFs4bFjHRE72NHuQz5Dn2jXV59XVi_ZX_B9Wu8A7MCk1uVejRo30akJhvJiz4Ol7fgyRDYxdPnemvI0jtVKKLFX4"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-</div>
-</section>
-<!-- Services Section (Bento Grid) -->
-<section class="py-stack-xl px-6 max-w-7xl mx-auto" id="services">
-<h2 class="font-h2 text-h2 text-white mb-stack-lg text-center">Core Services</h2>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-<!-- Service 1 -->
-<div class="glass-card p-stack-md rounded-xl flex flex-col gap-stack-sm">
-<div class="w-12 h-12 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary mb-2">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">language</span>
-</div>
-<h3 class="font-h3 text-h3 text-white">Web Development</h3>
-<p class="text-on-surface-variant">High-performance applications built with React and Next.js, optimized for speed and conversion.</p>
-</div>
-<!-- Service 2 -->
-<div class="glass-card p-stack-md rounded-xl flex flex-col gap-stack-sm">
-<div class="w-12 h-12 rounded-lg bg-secondary-container/20 flex items-center justify-center text-secondary mb-2">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
-</div>
-<h3 class="font-h3 text-h3 text-white">Telegram Bot Development</h3>
-<p class="text-on-surface-variant">Sophisticated automation and Web Apps within the Telegram ecosystem using Python and Node.js.</p>
-</div>
-<!-- Service 3 -->
-<div class="glass-card p-stack-md rounded-xl flex flex-col gap-stack-sm">
-<div class="w-12 h-12 rounded-lg bg-tertiary-container/20 flex items-center justify-center text-tertiary mb-2">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">terminal</span>
-</div>
-<h3 class="font-h3 text-h3 text-white">Custom Solutions</h3>
-<p class="text-on-surface-variant">Bespoke backend architectures and API integrations tailored specifically to your business logic.</p>
-</div>
-</div>
-</section>
-<!-- About Section -->
-<section class="py-stack-xl bg-surface-container-lowest" id="about">
-<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-stack-xl items-center">
-<div>
-<span class="font-label-caps text-secondary mb-stack-sm block">WHO WE ARE</span>
-<h2 class="font-h2 text-h2 text-white mb-stack-md">Engineers, not just builders.</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-md">
-                        The WebMind Club is a collective of specialized developers focused on real-world delivery. We don't just write code; we architect systems that solve business problems.
-                    </p>
-<div class="grid grid-cols-2 gap-stack-md">
-<div>
-<div class="text-white font-h3 text-3xl mb-1">50+</div>
-<div class="text-on-surface-variant text-sm uppercase tracking-widest">Projects Delivered</div>
-</div>
-<div>
-<div class="text-white font-h3 text-3xl mb-1">98%</div>
-<div class="text-on-surface-variant text-sm uppercase tracking-widest">Client Retention</div>
-</div>
-</div>
-</div>
-<div class="relative">
-<div class="absolute -inset-4 bg-primary-container/10 blur-3xl rounded-full"></div>
-<img class="rounded-xl border border-white/10 relative z-10 w-full object-cover" data-alt="A candid, high-end professional photograph of a collaborative developer team in a modern, dark-themed workspace. Multiple screens show clean dashboard interfaces and terminal windows. Soft ambient indigo lighting catches the edges of high-quality hardware. The scene portrays focused collaboration, expertise, and a sophisticated technological culture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZusK606d42tWc3sepB_rwvFFTifRlHhqawwzIl1mamq4S7j_dTMDZ3FL-pzLKa5ywlTQvs83CD2dKqlMQNjNnHqhex4RR9_tnidSCdVNRJyFs4gvm0cIOcp2DjeHjjyLVZNxSLRoL3o_csZCKcqw8qb1XZRrWRnUbespAtRLzw1Ghtl-JcKFSiSNS1pX91EGt1itGj8rQi_y4SR2tKAaQLbrxbLIqBmSHraLnwseJ41medNIDl4gLljOmIIpwnJb44ezq7qoQxqs"/>
-</div>
-</div>
-</section>
-<!-- Benefits Section -->
-<section class="py-stack-xl px-6 max-w-7xl mx-auto">
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
-<div class="p-stack-sm border-l-2 border-primary-container pl-stack-md">
-<h4 class="font-h3 text-xl text-white mb-2">Increase clients</h4>
-<p class="text-on-surface-variant text-sm">Expand your reach with high-conversion web platforms.</p>
-</div>
-<div class="p-stack-sm border-l-2 border-primary-container pl-stack-md">
-<h4 class="font-h3 text-xl text-white mb-2">Automation</h4>
-<p class="text-on-surface-variant text-sm">Reduce manual work with smart bots and workflows.</p>
-</div>
-<div class="p-stack-sm border-l-2 border-primary-container pl-stack-md">
-<h4 class="font-h3 text-xl text-white mb-2">Access to markets</h4>
-<p class="text-on-surface-variant text-sm">Deploy multi-lingual apps for a global audience.</p>
-</div>
-<div class="p-stack-sm border-l-2 border-primary-container pl-stack-md">
-<h4 class="font-h3 text-xl text-white mb-2">Reliable solutions</h4>
-<p class="text-on-surface-variant text-sm">Tested architectures that scale with your growth.</p>
-</div>
-</div>
-</section>
-<!-- Portfolio Section -->
-<section class="py-stack-xl px-6 max-w-7xl mx-auto" id="portfolio">
-<div class="flex justify-between items-end mb-stack-lg">
-<h2 class="font-h2 text-h2 text-white">Selected Work</h2>
-<a class="text-primary hover:underline font-medium" href="#">View all cases</a>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg">
-<!-- Portfolio Card 1 -->
-<div class="group cursor-pointer">
-<div class="overflow-hidden rounded-xl border border-white/10 mb-stack-sm relative">
-<img class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A clean, minimalist UI design for a fintech dashboard shown on a high-resolution display. The interface uses deep grays and vibrant indigo accents to highlight data visualizations and financial metrics. The lighting is crisp and modern, emphasizing the precision of the layout and the technical sophistication of the application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2LIFtUfpvkwG-ZFKz4TYhM0f3fn5TGzXnMdSKz93xCuOPi45jNlIbyA1yzXrMpQli4uUygBRcc3YEi44FcFRi27jZg7nKFPkkb6Z2ciWfpPASMT8F3eYQQxgYJLaW88mb_BMOCw60ocvR9XNBFpsrB6k-Ei_AMaaSwMq4yBWRDVvwcZCDt2MSxq38ae0O-xTnjBkdMRLaFBMy_Jb4QmmuSivrIrTXDihXp1x6GdvYVpxQERiT8dng5WVSqNBLZ3-WtgmeVZUyyiM"/>
-</div>
-<div class="flex gap-2 mb-2">
-<span class="bg-primary/10 text-primary text-[10px] px-2 py-1 rounded uppercase tracking-widest font-bold">React</span>
-<span class="bg-primary/10 text-primary text-[10px] px-2 py-1 rounded uppercase tracking-widest font-bold">Node.js</span>
-</div>
-<h3 class="font-h3 text-2xl text-white">FinTrack Global</h3>
-<p class="text-on-surface-variant">Complex financial dashboard for real-time asset management.</p>
-</div>
-<!-- Portfolio Card 2 -->
-<div class="group cursor-pointer">
-<div class="overflow-hidden rounded-xl border border-white/10 mb-stack-sm relative">
-<img class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional visualization of a Telegram bot automation interface. The screen shows a sequence of logic flows and automated response triggers designed for a customer support system. The style is tech-centric with a focus on clean lines, dark theme aesthetics, and functional design, using a palette of blues and blacks." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtApqSK8e3xHS0XL5vn48zowhfLzwPPoUNhlP153om7Jpx8UeZ4f_0U2zdIKlUvFNiXAVmTXFkCC2nYtEqNP-y3fi6hGF96QzQHimkaXdAPttW0GZ6-kiNck2QR5ldGX3TG-RkUBC7Os_m4ZlRb2V53zfkkJDaH4JtRrds9RHzX7N2ZXV-xZzqjBmNm5Gdi6EC1LzwzNTqaG3W5mbBHNDzbdLuG6vzPeDxiWRXWRIoc82786_OZvdbZuws9N5c-ocWNWbH8yZS_X0"/>
-</div>
-<div class="flex gap-2 mb-2">
-<span class="bg-secondary/10 text-secondary text-[10px] px-2 py-1 rounded uppercase tracking-widest font-bold">Python</span>
-<span class="bg-secondary/10 text-secondary text-[10px] px-2 py-1 rounded uppercase tracking-widest font-bold">PostgreSQL</span>
-</div>
-<h3 class="font-h3 text-2xl text-white">BotSupport Pro</h3>
-<p class="text-on-surface-variant">Automated customer service bot handling 10k+ daily requests.</p>
-</div>
-</div>
-</section>
-<!-- Process Section -->
-<section class="py-stack-xl bg-surface-container-low" id="process">
-<div class="max-w-7xl mx-auto px-6">
-<h2 class="font-h2 text-h2 text-white mb-stack-xl text-center">Development Lifecycle</h2>
-<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-md relative">
-<!-- Progress Line -->
-<div class="hidden md:block absolute top-12 left-0 w-full h-[1px] bg-white/10 z-0"></div>
-<div class="relative z-10 text-center md:text-left">
-<div class="w-12 h-12 rounded-full bg-surface border border-white/20 flex items-center justify-center mx-auto md:mx-0 mb-stack-sm text-primary font-bold">01</div>
-<h4 class="text-white font-h3 text-xl mb-2">Idea</h4>
-<p class="text-on-surface-variant text-sm">Deep dive into requirements and business goals.</p>
-</div>
-<div class="relative z-10 text-center md:text-left">
-<div class="w-12 h-12 rounded-full bg-surface border border-white/20 flex items-center justify-center mx-auto md:mx-0 mb-stack-sm text-primary font-bold">02</div>
-<h4 class="text-white font-h3 text-xl mb-2">Development</h4>
-<p class="text-on-surface-variant text-sm">Agile sprints with clean code and regular updates.</p>
-</div>
-<div class="relative z-10 text-center md:text-left">
-<div class="w-12 h-12 rounded-full bg-surface border border-white/20 flex items-center justify-center mx-auto md:mx-0 mb-stack-sm text-primary font-bold">03</div>
-<h4 class="text-white font-h3 text-xl mb-2">Launch</h4>
-<p class="text-on-surface-variant text-sm">Rigorous testing and seamless deployment.</p>
-</div>
-<div class="relative z-10 text-center md:text-left">
-<div class="w-12 h-12 rounded-full bg-surface border border-white/20 flex items-center justify-center mx-auto md:mx-0 mb-stack-sm text-primary font-bold">04</div>
-<h4 class="text-white font-h3 text-xl mb-2">Support</h4>
-<p class="text-on-surface-variant text-sm">Post-launch monitoring and iterative scaling.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Testimonials -->
-<section class="py-stack-xl px-6 max-w-7xl mx-auto">
-<h2 class="font-h2 text-h2 text-white mb-stack-lg text-center">Client Voice</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-<div class="glass-card p-stack-md rounded-xl">
-<div class="flex gap-1 text-primary mb-stack-sm">
-<span class="material-symbols-outlined text-sm">star</span>
-<span class="material-symbols-outlined text-sm">star</span>
-<span class="material-symbols-outlined text-sm">star</span>
-<span class="material-symbols-outlined text-sm">star</span>
-<span class="material-symbols-outlined text-sm">star</span>
-</div>
-<p class="text-body-lg text-white mb-stack-md italic">"WebMind delivered our SaaS MVP in record time. The code quality is exceptional and the communication was seamless."</p>
-<div class="flex items-center gap-stack-sm">
-<div class="w-10 h-10 rounded-full bg-surface-bright"></div>
-<div>
-<div class="text-white font-semibold">Alex Rivers</div>
-<div class="text-on-surface-variant text-xs uppercase tracking-wider">CTO, CloudScale</div>
-</div>
-</div>
-</div>
-<div class="glass-card p-stack-md rounded-xl">
-<div class="flex gap-1 text-primary mb-stack-sm">
-<span class="material-symbols-outlined text-sm">star</span>
-<span class="material-symbols-outlined text-sm">star</span>
-<span class="material-symbols-outlined text-sm">star</span>
-<span class="material-symbols-outlined text-sm">star</span>
-<span class="material-symbols-outlined text-sm">star</span>
-</div>
-<p class="text-body-lg text-white mb-stack-md italic">"Our Telegram bot is now our #1 source of lead generation thanks to WebMind's automation expertise."</p>
-<div class="flex items-center gap-stack-sm">
-<div class="w-10 h-10 rounded-full bg-surface-bright"></div>
-<div>
-<div class="text-white font-semibold">Elena Markova</div>
-<div class="text-on-surface-variant text-xs uppercase tracking-wider">Founder, EduBot</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Contact Section -->
-<section class="py-stack-xl px-6 max-w-7xl mx-auto" id="contact">
-<div class="glass-card rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
-<div class="p-stack-lg md:p-stack-xl bg-primary-container/10">
-<h2 class="font-h2 text-h2 text-white mb-stack-md">Start your project with WebMind today</h2>
-<p class="text-on-surface-variant mb-stack-lg">Ready to transform your vision into a digital reality? Reach out for a discovery call.</p>
-<div class="space-y-stack-md">
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-primary">send</span>
-<span class="text-white">Telegram: @webmind_club</span>
-</div>
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-primary">mail</span>
-<span class="text-white">Email: hello@webmind.club</span>
-</div>
-</div>
-</div>
-<div class="p-stack-lg md:p-stack-xl bg-surface-container">
-<form class="space-y-stack-md">
-<div>
-<label class="block text-sm font-medium text-on-surface-variant mb-1">Name</label>
-<input class="w-full bg-surface border border-white/10 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary-container transition-all outline-none" type="text"/>
-</div>
-<div>
-<label class="block text-sm font-medium text-on-surface-variant mb-1">Project Details</label>
-<textarea class="w-full bg-surface border border-white/10 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary-container transition-all outline-none" rows="4"></textarea>
-</div>
-<button class="w-full py-4 bg-primary text-on-primary rounded-lg font-h3 text-lg hover:brightness-110 active:scale-[0.98] transition-all">
-                            Send Message
-                        </button>
-</form>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="w-full py-12 border-t border-white/10 bg-black">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 md:px-12 max-w-7xl mx-auto">
-<div>
-<div class="text-lg font-bold text-white mb-4 font-['Space_Grotesk']">WebMind Club</div>
-<p class="font-['Space_Grotesk'] text-sm text-gray-500">© 2024 WebMind Club. Precision Engineering.</p>
-</div>
-<div class="flex flex-col gap-2">
-<div class="font-['Space_Grotesk'] text-sm font-bold text-white mb-2 uppercase tracking-widest">Connect</div>
-<a class="text-gray-500 hover:text-indigo-400 transition-colors font-['Space_Grotesk'] text-sm" href="#">Telegram</a>
-<a class="text-gray-500 hover:text-indigo-400 transition-colors font-['Space_Grotesk'] text-sm" href="#">Email</a>
-</div>
-<div class="flex flex-col gap-2">
-<div class="font-['Space_Grotesk'] text-sm font-bold text-white mb-2 uppercase tracking-widest">Legal</div>
-<a class="text-gray-500 hover:text-indigo-400 transition-colors font-['Space_Grotesk'] text-sm" href="#">Privacy Policy</a>
-<a class="text-gray-500 hover:text-indigo-400 transition-colors font-['Space_Grotesk'] text-sm" href="#">Terms of Service</a>
-</div>
-</div>
-</footer>
-</body></html>
+
+<div id="nav"></div>
+
+<script>
+// ── STATE ──
+const TOTAL = 9;
+let current = 0;
+let xp = 0;
+
+// ── QUIZ DATA ──
+const questions = [
+  {
+    q: "Ты хочешь хранить список задач, который будет меняться. Какой тип?",
+    opts: ["List", "Tuple", "Set"],
+    ans: "List",
+    exp: "✅ List — потому что список задач меняется!"
+  },
+  {
+    q: "Тебе нужно сохранить координаты города (широта, долгота), которые не должны меняться.",
+    opts: ["List", "Tuple", "Set"],
+    ans: "Tuple",
+    exp: "✅ Tuple — координаты постоянные!"
+  },
+  {
+    q: "У тебя есть список имён с повторами. Хочешь узнать только уникальные имена.",
+    opts: ["List", "Tuple", "Set"],
+    ans: "Set",
+    exp: "✅ Set — убирает все дубликаты!"
+  },
+  {
+    q: "Ты создаёшь плейлист — порядок важен, и треки можно добавлять.",
+    opts: ["Tuple", "Set", "List"],
+    ans: "List",
+    exp: "✅ List — порядок важен и список меняется!"
+  },
+  {
+    q: "Какой тип НЕ сохраняет порядок элементов?",
+    opts: ["List", "Tuple", "Set"],
+    ans: "Set",
+    exp: "✅ Set — не гарантирует порядок!"
+  }
+];
+
+let qIdx = 0;
+let qScore = 0;
+let answered = false;
+
+// ── SLIDES ──
+function goTo(n) {
+  const slides = document.querySelectorAll('.slide');
+  slides[current].classList.remove('active');
+  slides[current].classList.add('exit');
+  setTimeout(() => slides[current < n ? current : current].classList.remove('exit'), 500);
+  current = Math.max(0, Math.min(n, TOTAL - 1));
+  slides[current].classList.add('active');
+  updateNav();
+  addXP(5);
+  onSlideEnter(current);
+}
+
+function updateNav() {
+  const nav = document.getElementById('nav');
+  nav.innerHTML = '';
+  for (let i = 0; i < TOTAL; i++) {
+    const d = document.createElement('div');
+    d.className = 'dot' + (i === current ? ' active' : '');
+    d.onclick = () => goTo(i);
+    nav.appendChild(d);
+  }
+  document.getElementById('slide-counter').textContent = `${current + 1} / ${TOTAL}`;
+}
+
+document.getElementById('next').onclick = () => goTo(current + 1);
+document.getElementById('prev').onclick = () => goTo(current - 1);
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight') goTo(current + 1);
+  if (e.key === 'ArrowLeft') goTo(current - 1);
+});
+
+// ── XP ──
+function addXP(pts) {
+  xp += pts;
+  document.getElementById('xp-num').textContent = xp;
+  const pct = Math.min(xp / 100 * 100, 100);
+  document.getElementById('xp-fill').style.width = pct + '%';
+}
+
+// ── STARS ──
+(function() {
+  const bg = document.getElementById('stars-bg');
+  for (let i = 0; i < 60; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    const size = Math.random() * 3 + 1;
+    s.style.cssText = `width:${size}px;height:${size}px;top:${Math.random()*100}%;left:${Math.random()*100}%;animation-delay:${Math.random()*3}s;animation-duration:${1.5+Math.random()*2}s`;
+    bg.appendChild(s);
+  }
+})();
+
+// ── LIST DEMO ──
+const listData = ["apple", "banana", "orange"];
+function renderList() {
+  const c = document.getElementById('list-demo');
+  if (!c) return;
+  c.innerHTML = '';
+  listData.forEach((f, i) => {
+    const d = document.createElement('div');
+    d.className = 'list-item';
+    d.innerHTML = `<span class="idx">${i}</span>${emojiFor(f)} ${f}`;
+    c.appendChild(d);
+  });
+}
+function emojiFor(f) {
+  return {apple:'🍎',banana:'🍌',orange:'🍊',grape:'🍇',kiwi:'🥝'}[f] || '🍓';
+}
+function listAppend() {
+  if (listData.includes('grape')) return;
+  listData.push('grape');
+  renderList();
+  highlight('list-hint', '+1 элемент добавлен!');
+  addXP(3);
+}
+function listRemove() {
+  const i = listData.indexOf('banana');
+  if (i < 0) return;
+  listData.splice(i, 1);
+  renderList();
+  highlight('list-hint', 'banana удалён!');
+  addXP(3);
+}
+function listIndex() {
+  highlight('list-hint', `fruits[0] = "${listData[0]}" 🎯`);
+  const first = document.querySelector('.list-item');
+  if (first) { first.style.boxShadow = '0 0 16px var(--set)'; setTimeout(() => first.style.boxShadow = '', 1000); }
+  addXP(2);
+}
+function highlight(id, msg) {
+  const el = document.getElementById(id);
+  if (el) { el.textContent = msg; el.style.color = '#fff'; }
+}
+
+// ── SET DEMO ──
+function renderSetCards() {
+  const raw = [1, 2, 3, 3, 2, 4, 4, 5];
+  const unique = [...new Set(raw)];
+  const emojis = {1:'⭐',2:'💎',3:'🔥',4:'⚡',5:'🌙'};
+
+  const rawEl = document.getElementById('cards-raw');
+  const uniqEl = document.getElementById('cards-unique');
+  if (!rawEl) return;
+
+  rawEl.innerHTML = '';
+  uniqEl.innerHTML = '';
+
+  const seen = new Set();
+  raw.forEach(n => {
+    const d = document.createElement('div');
+    d.className = 'game-card ' + (seen.has(n) ? 'dup' : 'unique');
+    d.textContent = emojis[n];
+    rawEl.appendChild(d);
+    seen.add(n);
+  });
+  unique.forEach(n => {
+    const d = document.createElement('div');
+    d.className = 'game-card unique';
+    d.textContent = emojis[n];
+    uniqEl.appendChild(d);
+  });
+}
+
+// ── QUIZ ──
+function renderQuiz() {
+  if (qIdx >= questions.length) { showResult(); return; }
+  const q = questions[qIdx];
+  document.getElementById('quiz-question').textContent = `❓ ${q.q}`;
+  document.getElementById('quiz-feedback').textContent = '';
+  document.getElementById('next-q-btn').style.display = 'none';
+  answered = false;
+
+  const opts = document.getElementById('quiz-opts');
+  opts.innerHTML = '';
+  q.opts.forEach(opt => {
+    const b = document.createElement('div');
+    b.className = 'quiz-opt';
+    const icons = {List:'📋', Tuple:'🔒', Set:'✨'};
+    b.innerHTML = `${icons[opt] || ''} ${opt}`;
+    b.onclick = () => {
+      if (answered) return;
+      answered = true;
+      const allOpts = document.querySelectorAll('.quiz-opt');
+      allOpts.forEach(o => o.classList.add('answered'));
+      if (opt === q.ans) {
+        b.classList.add('correct');
+        qScore++;
+        addXP(20);
+        document.getElementById('quiz-feedback').textContent = q.exp;
+        document.getElementById('quiz-feedback').style.color = 'var(--set)';
+      } else {
+        b.classList.add('wrong');
+        document.getElementById('quiz-feedback').textContent = '❌ ' + q.exp;
+        document.getElementById('quiz-feedback').style.color = 'var(--tuple)';
+        allOpts.forEach(o => { if (o.textContent.includes(q.ans)) o.classList.add('correct'); });
+      }
+      updateQProgress();
+      document.getElementById('next-q-btn').style.display = 'inline-block';
+    };
+    opts.appendChild(b);
+  });
+  updateQProgress();
+}
+
+function updateQProgress() {
+  const dots = document.querySelectorAll('.qp-dot');
+  dots.forEach((d, i) => {
+    d.className = 'qp-dot';
+    if (i < qIdx) d.classList.add('done');
+    else if (i === qIdx) d.classList.add('current');
+  });
+}
+
+function nextQ() {
+  qIdx++;
+  if (qIdx >= questions.length) { showResult(); return; }
+  renderQuiz();
+}
+
+function showResult() {
+  document.getElementById('quiz-area').style.display = 'none';
+  const res = document.getElementById('quiz-result');
+  res.classList.add('show');
+  const pct = Math.round(qScore / questions.length * 100);
+  document.getElementById('quiz-score-text').innerHTML =
+    `<span style="color:var(--gold)">${qScore}</span><span style="color:var(--text2)">/${questions.length}</span>`;
+  const msgs = ['Не беда — попробуй ещё раз! 💪', 'Неплохо! Повтори материал 📚', 'Хорошо! Ты знаешь коллекции 👍', 'Отлично! Почти идеально 🌟', 'ЛЕГЕНДА! Ты мастер! 🏆'];
+  document.getElementById('quiz-result-msg').textContent = msgs[Math.min(qScore, 4)];
+  addXP(qScore * 10);
+
+  const dots = document.querySelectorAll('.qp-dot');
+  dots.forEach(d => d.classList.add('done'));
+}
+
+// ── CONFETTI ──
+function makeConfetti() {
+  const c = document.getElementById('confetti');
+  if (!c) return;
+  c.innerHTML = '';
+  const colors = ['var(--list)','var(--tuple)','var(--set)','var(--gold)','var(--purple)'];
+  for (let i = 0; i < 40; i++) {
+    const d = document.createElement('div');
+    d.className = 'conf';
+    d.style.cssText = `left:${Math.random()*100}%;top:-10%;width:${6+Math.random()*8}px;height:${6+Math.random()*8}px;background:${colors[Math.floor(Math.random()*colors.length)]};border-radius:${Math.random()>0.5?'50%':'2px'};animation-duration:${2+Math.random()*2}s;animation-delay:${Math.random()}s;transform:rotate(${Math.random()*360}deg)`;
+    c.appendChild(d);
+  }
+}
+
+// ── ON SLIDE ENTER ──
+function onSlideEnter(n) {
+  if (n === 2) { resetList(); renderList(); }
+  if (n === 4) { renderSetCards(); }
+  if (n === 6) { qIdx = 0; qScore = 0; answered = false; document.getElementById('quiz-area').style.display=''; document.getElementById('quiz-result').classList.remove('show'); renderQuiz(); }
+  if (n === 8) { makeConfetti(); addXP(30); }
+}
+
+function resetList() {
+  listData.length = 0;
+  listData.push('apple','banana','orange');
+}
+
+// ── INIT ──
+updateNav();
+renderList();
+renderSetCards();
+renderQuiz();
+</script>
+</body>
+</html>
